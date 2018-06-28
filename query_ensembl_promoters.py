@@ -219,7 +219,7 @@ def main(args):
 
 if __name__ == '__main__':
  
-    parser = argparse.ArgumentParser(description='Description of your program')
+    parser = argparse.ArgumentParser(description='It is a script that allows to retrieve the promoter regions for a desired list of genes from ENSEMBL')
  
     parser.add_argument('-i','--inputfile', help='input file with gene names', required=True)
     parser.add_argument('-p','--promoterlength', help='length of the promoter region, region upstream TSS', required=True)
