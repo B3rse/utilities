@@ -76,8 +76,8 @@ def GET_json(url):
 def dict_structure(dct, expand=False, levels=[0,-1]):
     ''' Return the structure of the keys for a dictionary dct '''
     #expand: allows to expand values that are lists of dictionaries,
-    #        return the structure of first dictionary (OBJECT).
-    #level: allows to specify the range of levels to return [min, max],
+    #        returns the structure of first dictionary (OBJECT).
+    #levels: allows to specify the range of levels to return [min, max],
     #       [.., -1] removes maximum depth limit.
     s, l, o = [''], 0, 0 #l = level, o = current object
     if len(levels) != 2 or (levels[0] > levels[1] and levels[1] != -1):
