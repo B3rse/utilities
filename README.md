@@ -49,6 +49,6 @@ Entry is a general object that accepts any number of attributes that are stored 
 
       `json, error = ra.GET_json(url)`
 
-  - **dict_structure(** *dictionary*, *expand=False*, *levels=[0,-1]* **)** returns the structure of the keys for dictionary. *expand* allows to expand values that are lists of dictionaries and returns the structure of first dictionary. *levels* allows to specify the range of levels to return [min, max], [.., -1] removes maximum depth limit.
+  - **dict_structure(** *dictionary*, *expand=False*, *levels=[0,-1]* **)** returns the structure of the keys for dictionary. *expand* allows to expand values that are lists of dictionaries and returns the structure of the first dictionary. *levels* allows to specify the range of levels to return [min, max], [.., -1] removes maximum depth limit.
 
       `ra.dict_structure(dictionary, expand=False, levels=[0,-1])`
