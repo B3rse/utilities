@@ -7,10 +7,10 @@ Michele Berselli, <berselli.michele@gmail.com>
 ## query_ensembl_promoters.py
 A script that allows to retrieve the promoter regions for a desired list of genes from ENSEMBL. Genes symbols should be provided as a column in a plain text file. The user can specify the number of bases upstream and downstream the TSS. The output is saved in a fasta file. Download errors are handled and reported in a log file if unsolvable (e.g. identifier not found).
 
-#### Usage
-	`query_ensembl_promoters.py [-h] -i INPUTFILE -p PROMOTERLENGTH [-d DOWNSTREAMLENGTH] -o OUTPUTFILE`
+### Usage
+    `query_ensembl_promoters.py [-h] -i INPUTFILE -p PROMOTERLENGTH [-d DOWNSTREAMLENGTH] -o OUTPUTFILE`
 
-#### Parameters
+### Parameters
   - **-h**, **--help**
   - **-i**, **--inputfile** PATH/TO/INPUTFILE --> *input file with gene names*
   - **-p**, **--promoterlength** PROMOTERLENGTH --> *length of the promoter region, region upstream TSS*
@@ -20,30 +20,30 @@ A script that allows to retrieve the promoter regions for a desired list of gene
 ## rest_api.py
 A simple library that provides objects and methods to work with REST api based on requests.
 
-#### Dependencies
+### Dependencies
 The library requires *requests* and *json* libraries.
 
-#### Usage
+### Usage
 To use the library simply `import rest_api as ra` into your code.
 
-#### Objects
+### Objects
 
-##### Entry
+#### Entry
 Entry is a general object that accepts any number of attributes that are stored as strings.
 
   - **Entry(** *dictionary* **)** to initialize the object with the attributes and corresponding values passed as the dictionary.
 
       `entry = ra.Entry(dictionary)`
 
-  - **header_to_tsv()** method to return all attributes names in a tsv format.
+  - **header_to_tsv( )** method to return all attributes names in a tsv format.
 
       `entry.header_to_tsv()`
 
-  - **values_to_tsv()** method to return all attributes values in a tsv format.
+  - **values_to_tsv( )** method to return all attributes values in a tsv format.
 
       `entry.values_to_tsv()`
 
-#### Functions
+### Functions
 
   - **GET_json(** *url* **)** requests a json from the url and check for errors. If request was successful error is 0 and json in returned, otherwise error is 1 and no json is returned.
 
