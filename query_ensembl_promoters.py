@@ -32,36 +32,6 @@ def request_stable_ID_gene(list_gene_name):
 	return r.json(), error_code
 #end def request_stable_ID_gene
 
-def request_genomic(id_gene):
-	server = 'https://rest.ensembl.org'
-	ext = '/sequence/id/' + id_gene + '?type=genomic'
-
-	r = requests.get(server+ext, headers={ 'Content-Type' : 'text/x-fasta'})
-
-	error_code = 0
-	if not r.ok:
-		error_code = 1
-	#end if
-
-	return r.text, error_code
-#end def request_genomic
-
-def request_genomic_5prime(id_gene, prime_5):
-	server = 'https://rest.ensembl.org'
-	ext = '/sequence/id/' + id_gene + '?type=genomic;expand_5prime=' + str(prime_5)
-
-	r = requests.get(server+ext, headers={ 'Content-Type' : 'application/json'}, timeout=10)
-
-	error_code, json, status_code = 0, r.json(), r.status_code
-	if not r.ok:
-		error_code = 1
-	#end if
-
-#	r.close()
-
-	return json, error_code, status_code
-#end def request_genomic_5prime
-
 def request_genomic_5prime_3prime(id_gene, prime_5, prime_3):
 	server = 'https://rest.ensembl.org'
 	ext = '/sequence/id/' + id_gene + '?type=genomic;expand_5prime=' + str(prime_5) + ';expand_3prime=' + str(prime_3)
@@ -73,13 +43,11 @@ def request_genomic_5prime_3prime(id_gene, prime_5, prime_3):
 		error_code = 1
 	#end if
 
-#	r.close()
-
 	return json, error_code, status_code
 #end def request_genomic_5prime_3prime
 
 def request_annotazione_json(name_gene):
-	''' richiesta annotazione, json '''
+	''' request annotation, json '''
 	server = 'http://rest.ensembl.org'
 	ext = '/lookup/symbol/homo_sapiens/' + name_gene + '?'
 
@@ -90,28 +58,11 @@ def request_annotazione_json(name_gene):
 		error_code = 1
 	#end if
 
-#	r.close()
-
 	return json, error_code, status_code
 #end def request_annotazione_json
 
-def request_annotazione_json_utr(id_gene):
-	''' richiesta annotazione con utr, json '''
-	server = 'http://rest.ensembl.org'
-	ext = '/lookup/id/' + id_gene + '?expand=1;utr=1'
-
-	r = requests.get(server+ext, headers={ 'Content-Type' : 'application/json'})
-
-	error_code = 0
-	if not r.ok:
-		error_code = 1
-	#end if
-
-	return r.json(), error_code
-#end def request_annotazione_json
-
 def request_region(chromosome, start_region, end_region, strand, assembly_name):
-	''' richiesta exon '''
+	''' request exon '''
 	server = 'http://rest.ensembl.org'
 	ext = '/sequence/region/human/' + str(chromosome) + ':' + str(start_region) + ".." + str(end_region) + ':' + str(strand) + '?coord_system_version=' + assembly_name
 
