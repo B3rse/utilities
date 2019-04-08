@@ -45,7 +45,7 @@ Entry is a general object that accepts any number of attributes that are stored 
 
 ### Functions
 
-  - **GET_json(** *url* **)** requests a json from the url and check for errors. If request was successful error is 0 and json in returned, otherwise error is 1 and no json is returned.
+  - **GET_json(** *url* **)** requests a json from the url and check for errors. If request was successful error is 0 and json is returned, otherwise error is 1 and no json is returned.
 
       `json, error = ra.GET_json(url)`
 
