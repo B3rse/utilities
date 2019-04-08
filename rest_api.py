@@ -64,7 +64,7 @@ class Entry(object):
 ########################################################################
 def GET_json(url):
     ''' Requests a json from the url and check for errors '''
-    r = requests.get(url, headers=HEADERS_json)
+    r = requests.get(url, headers=HEADERS_json, timeout=10)
     #Check errors
     if r.status_code == 200: #OK
         return r.json(), 0
